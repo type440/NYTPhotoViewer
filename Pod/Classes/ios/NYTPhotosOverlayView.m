@@ -51,9 +51,9 @@
     
     [super layoutSubviews];
 
-    if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
-        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
-    }
+//    if ([self.captionView conformsToProtocol:@protocol(NYTPhotoCaptionViewLayoutWidthHinting)]) {
+//        [(id<NYTPhotoCaptionViewLayoutWidthHinting>) self.captionView setPreferredMaxLayoutWidth:self.bounds.size.width];
+//    }
 }
 
 #pragma mark - NYTPhotosOverlayView
@@ -81,21 +81,21 @@
 }
 
 - (void)setCaptionView:(UIView *)captionView {
-    if (self.captionView == captionView) {
-        return;
-    }
-    
-    [self.captionView removeFromSuperview];
-    
-    _captionView = captionView;
-    
-    self.captionView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:self.captionView];
-    
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
-    NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
-    [self addConstraints:@[bottomConstraint, widthConstraint, horizontalPositionConstraint]];
+//    if (self.captionView == captionView) {
+//        return;
+//    }
+//    
+//    [self.captionView removeFromSuperview];
+//    
+//    _captionView = captionView;
+//    
+//    self.captionView.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self addSubview:self.captionView];
+//    
+//    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+//    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
+//    NSLayoutConstraint *horizontalPositionConstraint = [NSLayoutConstraint constraintWithItem:self.captionView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
+//    [self addConstraints:@[bottomConstraint, widthConstraint, horizontalPositionConstraint]];
 }
 
 - (UIBarButtonItem *)leftBarButtonItem {
